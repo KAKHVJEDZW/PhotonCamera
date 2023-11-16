@@ -37,15 +37,15 @@ jobs:
           artifactName: app-release-unsigned.apk
           name: app
           path: app/build/outputs/apk/release/
-      - name: Sign Android release
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: app/build/outputs/apk/release/
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-          signedReleaseFile: app/build/outputs/apk/release/PhotonCamera.apk
+      #- name: Sign Android release
+      #  uses: r0adkll/sign-android-release@v1
+      #  with:
+      #    releaseDirectory: app/build/outputs/apk/release/
+      #    signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+      #    alias: ${{ secrets.ALIAS }}
+      #    keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+      #    keyPassword: ${{ secrets.KEY_PASSWORD }}
+      #    signedReleaseFile: app/build/outputs/apk/release/PhotonCamera.apk
       - name: Upload signed release APK
         uses: actions/upload-artifact@v3
         with:
